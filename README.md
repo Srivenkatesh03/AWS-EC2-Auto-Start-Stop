@@ -36,18 +36,6 @@ Cron ---> Python Script ---> boto3 ---> AWS EC2 API ---> EC2 Instance
 
 See docs/architecture-diagram.txt.
 
-📁 Project Structure
-ec2-auto-start-stop/
-├── scripts/
-│   └── start-stop-ec2.py
-├── docs/
-│   └── architecture-diagram.txt
-├── logs/
-│   └── .gitkeep
-├── .gitignore
-├── requirements.txt
-└── README.md
-
 🧩 Python Script
 
 Path: scripts/start-stop-ec2.py
