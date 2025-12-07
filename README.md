@@ -39,7 +39,7 @@ See docs/architecture-diagram.txt.
 🧩 Python Script
 
 Path: scripts/start-stop-ec2.py
-
+```bash
 import boto3
 
 REGION = "ap-south-1"
@@ -69,21 +69,21 @@ if __name__ == "__main__":
         stop_instances()
     else:
         print("Invalid command: start or stop")
-
+```
 🛠 Setting Up Cron
 
 Edit cron:
-
+```
 crontab -e
-
+```
 
 Add these:
-
+```
 0 9 * * * /usr/bin/python3 /home/sri/Downloads/ec2_automation/start-stop-ec2.py start >> /home/sri/Downloads/ec2_automation/log.txt 2>&1
 0 21 * * * /usr/bin/python3 /home/sri/Downloads/ec2_automation/start-stop-ec2.py stop >> /home/sri/Downloads/ec2_automation/log.txt 2>&1
-
+```
 🔐 IAM Permission (Least Privilege)
-
+```
 Create custom IAM policy:
 
 {
@@ -100,17 +100,16 @@ Create custom IAM policy:
     }
   ]
 }
-
+```
 🧪 Testing
 
 Start EC2:
-
+```
 python3 start-stop-ec2.py start
-
+```
 
 Stop EC2:
-
+```
 python3 start-stop-ec2.py stop
-
-
+```
 Check logs/log.txt for results.
